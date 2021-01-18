@@ -1,0 +1,28 @@
+---
+title: WebSockets
+---
+
+## WebSockets Concepts
+
+> A protocol defines the format and the order of messages exchanged between two or more communicating entities, as well as the actions taken on the transmission and/or receipt of a message or other event.
+>
+> -Page 37, Computer Networking - A Top-Down Approach, James Kurose & Keith Ross
+
+#### WebSockets vs HTTP
+
+Let's try to understand WebSockets by looking at the limitations in the HTTP protocol. 
+
+- HTTP is a request-response protocol - the client sends a request message to the server, the server returns a response message.
+- Now, what if the server wanted to send messages without being prompted by a request message from a client? There are a few hacks that have been employed using HTTP to deal with this:
+  - Short Polling - client makes HTTP requests at a fixed delay
+  - Long Polling - client makes HTTP request, server waits for the maximum amount of time allowed before responding, client makes another HTTP request, and so on.
+  - Both of these methods incur a bit of network bandwidth overhead. More importantly, they're abusing HTTP functionality to achieve the desired behaviour!
+
+WebSockets addresses this problem essentially by creating and maintaining a two-way connection between the client and the server over TCP. Some features of WebSockets:
+
+- Full-duplex connection, meaning that the client and server can both send data along the connection at the same time. 
+- Data is sent as discrete messages. Message data has to either be in a string (USVString), or some kind of binary data type (`ArrayBuffer, Blob, ArrayBufferView`). More Details: [MDN - WebSocket.send()](https://developer.mozilla.org/en-US/docs/Web/API/WebSocket/send)
+
+More Details: [fireship.io - WebSockets in 100 Seconds & Beyond with Socket.io](https://www.youtube.com/watch?v=1BfCnjr_Vjg)
+
+

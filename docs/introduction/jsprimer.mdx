@@ -1,0 +1,81 @@
+---
+title: JavaScript Primer / Refresher
+---
+
+### Introduction and Brief History
+
+- JavaScript was created in 10 days in September 1995 by Netscape engineer Brendan Eich.
+- Designed as scripting language for web browsers, but evolved way past it's original scope. (JavaScript everywhere - [even Arduino](https://cylonjs.com/documentation/platforms/arduino/).)
+- The most popular language for projects on GitHub since 2014 ([source](https://octoverse.github.com/))
+- Has nothing to do with Java, the name was for ... marketing reasons. 
+
+More Details: [The Weird History of JavaScript](https://www.youtube.com/watch?v=Sh6lK57Cuk4)
+
+### JavaScript as a programming language
+
+- (Very) weakly typed - you don't have to specify the types of variables in declarations or function parameters or function return values. 
+- Interpreted - JavaScript programs execute instructions directly, without compilation.
+- Object Oriented - but not the way you might be used to it. While you can declare classes and such, object properties and methods can still be modified and new ones added. [Prototypical Inheritance](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Inheritance_and_the_prototype_chain)
+
+More Details: [fireship.io - JavaScript: How it's Made](https://www.youtube.com/watch?v=FSs_JYwnAdI)
+
+### Client-Side JavaScript vs. Node.js 
+
+**Similarities**
+
+- JavaScript is executed on a JavaScript engine, which is a program that translates the JavaScript program into machine instructions. It effectively acts as the interpreter, but also has extra functionality like just-in-time compilation for improved performance.
+  - Examples of JavaScript Engines - V8 (used in Chromium Browsers and node.js), SpiderMonkey (used in Firefox)
+
+**Differences**
+
+- Global Object
+  - Client-side JavaScript - The `window` object is the Global Object in the Browser. Any Global Variables or Functions can be accessed as *properties* of the `window` object. You use `window` to access the various web browser APIs, such as the DOM, but also many other things! (More to come in section about Progressive Web Applications)
+  - Node.js - The global object is `global`. Big surprise. To access the various APIs provided by Node.js (such as accessing the filesystem, making HTTP requests), we access the built-in packages using the `require` function.
+
+- Importing external dependencies:
+  - Client-Side JavaScript - import external dependencies into the global scope by including the appropriate `<script>` tags in the HTML file. Easy peasy.
+  - Node.js - like the built-in packages, we also use the `require` function to import external modules. (if you've built front-end web applications with a JavaScript framework like react.js, you are effectively writing a node.js program, which then gets "compiled" down to vanilla HTML, CSS and JavaScript before it is served). 
+
+### Selected JavaScript Concepts
+
+#### node.js modules / npm / yarn
+
+- node.js projects are organized into a directory, called a _package_.
+- `.js` files in a package are known as _modules_. each module has its own context, and cannot interfere with other modules or pollute the scope of the global object.
+- a module can define which functions / objects within its scope are exported (and therefore can be imported by other modules) by modifying the `module.exports` object.
+- a module can import external dependencies / other modules within the package using the `require` function. if a single keyword is passed to `require` (e.g `"fs"` or `"express"`), node.js searches for the required module in the `node_modules` folder in the root of the package if it is not a built-in package (like `"fs"` or `"http"`).
+- external modules are hosted on `npm` (node package manager). We install modules (and update the `package.json` file, which describes the package and its dependencies) using a command-line package manager, like `npm` (usually installed with node.js) or `yarn`
+
+#### var / let / const
+
+- `var`, `let` and `const` are three keywords that you can use to declare variables. 
+  - `var` is the oldest method of declaring a variable (and the only way to do so before the ES6 specification)
+  - `let` also lets you declare a variable, but has a few key differences from var (among others)
+    - `let` is block scoped (a block is a series of statements bounded by curly braces `{}`)
+  - `const` lets you declare a variable, but you will not be able to re-assign the variable (but if the variable is an object, properties of the object can still be updated)
+
+
+#### Arrow Functions
+
+- Arrow Functions are a compact alternative to a typical function expression. 
+  - Instead of `const square = function(a) {return a * a}` we can write `const square = (a) => a*a`
+
+More details: [MDN - Arrow Functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions)
+
+#### Promises and Async / Await
+
+More details: 
+
+- [fireship.io - JavaScript Promise in 100 Seconds](https://www.youtube.com/watch?v=RvYYCGs45L4)
+- [MDN - Promises](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Promise)
+- [MDN - async await](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/async_function)
+
+#### Extra Advanced Content: The JavaScript Event Loop
+
+There is far too much to explain here, and I don't think I can do the topics justice explaining all of them, but understanding the JavaScript event loop will really help you understand how concurrency and features such as promises, async/await and setTimeout work.
+
+More details:
+
+- [MDN - Concurrency model and the event loop](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop)
+- [Jake Archibald: In The Loop - JSConf.Asia](https://www.youtube.com/watch?v=cCOL7MC4Pl0)
+- [Frontend Interview Handbook](https://github.com/yangshun/front-end-interview-handbook) - For even more advanced JS concepts

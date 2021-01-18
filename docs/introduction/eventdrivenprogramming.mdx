@@ -1,0 +1,39 @@
+---
+title: Event-Driven Programming
+---
+
+>In computer programming, event-driven programming is a programming paradigm in which the flow of the program is determined by events such as user actions (mouse clicks, key presses), sensor outputs, or messages from other programs or threads. Event-driven programming is the dominant paradigm used in graphical user interfaces and other applications (e.g., JavaScript web applications) that are centered on performing certain actions in response to user input. This is also true of programming for device drivers (e.g., P in USB device driver stacks).
+>
+>In an event-driven application, there is generally a main loop that listens for events and then triggers a callback function when one of those events is detected. In embedded systems, the same may be achieved using hardware interrupts instead of a constantly running main loop. Event-driven programs can be written in any programming language, although the task is easier in languages that provide high-level abstractions, such as await and closures.
+>
+>-Wikipedia, Event-driven Programming
+
+We see event-driven programming in JavaScript when we attach event listeners to listen to DOM events, and then execute statements in response to these events.
+
+**Example**: Let's say we have a button on a webpage. The HTML representation of the button is:
+
+```html
+<button id="myButton"></div>
+```
+
+and we have in our script,
+
+```javascript
+document.getElementById("button").addEventListener("click", function(event){
+	alert("the button has been clicked!")
+})
+```
+
+Over here, we _attach_ an event handler function that is called when the button fires the `click` event, which happens when the user clicks on the button on the web page itself. 
+
+Similarly, in server-side JavaScript, we also see event-driven programming when we write route handlers to respond to HTTP requests. 
+
+**Example** : We have in an express server the following:
+
+```javascript
+app.get('/', function (req, res) {
+  res.send('Hello there!')
+})
+```
+
+Over here, we attach a handler function to the server, which sends a HTTP response with a plaintext body, when the server receives a `GET` request on the `/` route.
