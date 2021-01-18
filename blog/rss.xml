@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Realtime Apps Blog</title>
+        <link>https://realtime-apps-iap.github.io/blog</link>
+        <description>Realtime Apps Blog</description>
+        <lastBuildDate>Mon, 18 Jan 2021 00:00:00 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <item>
+            <title><![CDATA[First Day]]></title>
+            <link>https://realtime-apps-iap.github.io/blog/firstday</link>
+            <guid>firstday</guid>
+            <pubDate>Mon, 18 Jan 2021 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hellos!]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Welcome to this workshop]]></title>
+            <link>https://realtime-apps-iap.github.io/blog/welcome</link>
+            <guid>welcome</guid>
+            <pubDate>Thu, 30 May 2019 00:00:00 GMT</pubDate>
+            <description><![CDATA[Hi everybody! Happy to be sharing my experiences in this workshop!]]></description>
+        </item>
+    </channel>
+</rss>

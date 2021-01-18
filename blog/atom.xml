@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+    <id>https://realtime-apps-iap.github.io/blog</id>
+    <title>Realtime Apps Blog</title>
+    <updated>2021-01-18T00:00:00.000Z</updated>
+    <generator>https://github.com/jpmonette/feed</generator>
+    <link rel="alternate" href="https://realtime-apps-iap.github.io/blog"/>
+    <subtitle>Realtime Apps Blog</subtitle>
+    <icon>https://realtime-apps-iap.github.io/img/favicon.ico</icon>
+    <entry>
+        <title type="html"><![CDATA[First Day]]></title>
+        <id>firstday</id>
+        <link href="https://realtime-apps-iap.github.io/blog/firstday"/>
+        <updated>2021-01-18T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hellos!]]></summary>
+    </entry>
+    <entry>
+        <title type="html"><![CDATA[Welcome to this workshop]]></title>
+        <id>welcome</id>
+        <link href="https://realtime-apps-iap.github.io/blog/welcome"/>
+        <updated>2019-05-30T00:00:00.000Z</updated>
+        <summary type="html"><![CDATA[Hi everybody! Happy to be sharing my experiences in this workshop!]]></summary>
+    </entry>
+</feed>
