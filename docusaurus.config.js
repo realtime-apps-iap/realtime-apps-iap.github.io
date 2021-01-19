@@ -8,7 +8,6 @@ module.exports = {
     favicon: "img/favicon.ico",
     organizationName: "realtime-apps-iap",
     projectName: "realtime-apps-iap.github.io",
-    plugins: ["@docusaurus/plugin-google-analytics"],
     themeConfig: {
         hideableSidebar: true,
         navbar: {
@@ -81,7 +80,7 @@ module.exports = {
             ],
             copyright: `Realtime Apps IAP | Built with ❤️`,
         },
-        googleAnalytics: {
+        gtag: {
             trackingID: "G-WT3D2HSL72",
             // Optional fields.
             anonymizeIP: false, // Should IPs be anonymized?
