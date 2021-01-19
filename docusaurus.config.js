@@ -23,7 +23,7 @@ module.exports = {
                     position: "right",
                 },
                 {
-                    to: "docs/competition/info",
+                    to: "competition",
                     //activeBasePath: "competition",
                     label: "Competition",
                     position: "right",

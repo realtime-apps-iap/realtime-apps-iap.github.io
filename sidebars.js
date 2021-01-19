@@ -12,5 +12,5 @@ module.exports = {
         "Project: Videocall App": ["videocallapp/intro"],
         // Others: ["others/styleguide"], // Not shown in sidebar. Just visit /resources/docs/guide to view this.
     },
-    competition: ["competition/info"],
+    competition: ["competition/info"], // This sidebar is not used anymore.
 };
