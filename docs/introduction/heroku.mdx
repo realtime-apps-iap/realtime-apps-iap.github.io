@@ -1,0 +1,168 @@
+---
+id: deployment-to-heroku
+title: Deployment to Heroku
+---
+
+As React is one of the most popular frontend framework/libraries these days,
+I will be showing how to deploy a react project on Heroku.
+
+### Heroku Dynos
+
+"The Heroku Platform uses the container model to run and scale all Heroku apps. The containers used at Heroku are called “dynos.” Dynos are isolated, virtualized Linux containers that are designed to execute code based on a user-specified command.
+Your app can scale to any specified number of dynos based on its resource demands. Heroku’s container management capabilities provide you with an easy way to scale and manage the number, size, and type of dynos your app may need at any given time."W
+
+> For free tier, the dyno only wakes up upon activity, and sleeps after 30 minutes of inactivity
+> For paid tier, the dyno will always be awake.
+
+```
+npx create-react-app my-app
+```
+
+## Deploying to Heroku
+
+### 1. Create Heroku App
+
+The heroku create CLI command creates a new empty application on Heroku, along with an associated empty Git repository
+If you run this command from your app’s root directory, the empty Heroku Git repository is automatically set as a remote for your local repository.
+
+```
+heroku create
+```
+
+**Check that remote is set**
+
+```
+git remote -v
+```
+
+Sample results:
+
+```
+heroku  https://git.heroku.com/react-test-app-1234.git (fetch)
+heroku  https://git.heroku.com/react-test-app-1234.git (push)
+origin  https://github.com/realtime-apps-iap/my-app.git (fetch)
+origin  https://github.com/realtime-apps-iap/my-app.git (push)
+```
+
+> It looks like this for me, because this git repo is also linked to a github remote
+
+**Linking to an existing Heroku App**
+
+```
+heroku git:remote -a thawing-inlet-61413
+```
+
+> If you created an application through Heroku website first, instead of directly through Heroku CLI
+
+### 2. Deploying code
+
+```
+git push heroku master
+```
+
+> Heroku only deploys code that you push to master or main. Pushing code to another branch of the heroku remote has no effect.
+
+BUT if you want to deploy from another branch, you can do this:
+
+```
+git push heroku anotherBranch:master
+```
+
+## What does Heroku run?
+
+Heroku will automatically detect what kind of app is this (e.g. Node.js, Python, etc),
+and if possible, try to automatically run the app.
+
+For instance if this is a create-react-app, Heroku will know (through package.json at the root) that is can run the most typical script which is `yarn start` or `npm start` and create a buildpack for it.
+Buildpacks are scripts that are run when your app is deployed. They are used to install dependencies for your app and configure your environment.
+
+> If your project is purely a React project at the root, you can just do this very simply.  
+> Once you `git push heroku main`, the code will be uploaded to Heroku remote and automatically start running (if possible) and you can visit your link afterwards https://react-test-app-1234.herokuapp.com/
+
+Otherwise, if Heroku does not know how and what to run this application, we have to specify it - through the use of the Heroku `Procfile` shown below.
+
+## Heroku Procfile
+
+If Heroku does not know how to _automatically_ run the application, we need a Procfile saved at the root of the repository.  
+A Profile is a text file in the root directory of your application, to **explicitly declare what command should be executed** to start your app.
+
+Before we go through what to write for a Procfile, let's check for our app that succeeded without having a Procfile. What did Heroku pick up for this react app and decide what to run? Go into the Heroku website and check it out with me...  
+Observe under 'Overview' tab for the app project for 'Dyno formation'
+This is what's there for this react application of ours:
+
+```
+web npm start
+```
+
+In fact, this is essentially the Profile command!
+
+### Specifying a Dyno process
+
+```
+<processType> <command & arguments if there is>
+```
+
+> This is essentially it!
+
+An example Procfile for a Django app:
+
+```
+web: python manage.py runserver 0.0.0.0:5000
+```
+
+> In particular for website projects, specifying process type keyword `web` for the process that serves the website is important.
+> For Heroku, it declares that this process type will be attached to the HTTP routing stack of Heroku, and receive web traffic when deployed.
+
+### Multiple Dyno processes
+
+What if you want to run more than a single command in a dyno?
+
+```
+web: puma -C config/puma.rb & sidekiq & wait -n
+```
+
+> Indicate the different commands separated by `&`  
+> Note that `wait -n` exits when at least one of the commands exits and triggers the dyno to restart - might be a safe catch here because you don't want your dyno to run if one of the commands exits unexpectedly while the rest continues to run.
+
+> This method may not be a good practice for production applications as there will be limitations to 'process isolation, scaling and monitoring'. See the section below for a better way to do so - separating worker process types
+
+### Multiple Dyno processes (Separate process types)
+
+You can have multiple worker process types running, instead of combining them together in one - though possible, it is not recommended.  
+We just need to have separate process types.
+
+Sample:
+
+```
+web: python manage.py runserver 0.0.0.0:5000
+worker1: python project/worker/worker.py
+processor1: python project/worker/processor.py
+```
+
+> The name of process types can be anything. Only the name `web` is special and reserved, as heroku needs to know to deal with web traffic.
+
+---
+
+## Useful Heroku CLI commands
+
+### Check existing heroku apps
+
+```
+heroku apps
+```
+
+### Delete an existing heroku app
+
+```
+heroku apps:destroy <appname> --confirm <appname>
+```
+
+> For Heroku accounts that are not verified (with input credit card details), you can only create a maximum of 5 apps
+
+### Rename an existing heroku app
+
+```
+heroku apps:rename <newname> --app <oldname>
+```
+
+> When you first create a heroku app through Heroku CLI, a random name will be given.

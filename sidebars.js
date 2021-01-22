@@ -6,6 +6,7 @@ module.exports = {
             "introduction/eventdrivenprogramming",
             "introduction/websockets",
             "introduction/webrtc",
+            "introduction/deployment-to-heroku",
         ],
         "Project: Chat Platform": ["chatapp/intro"],
         //"Project: GPS Location App": ["locationapp/intro", "locationapp/main"],
