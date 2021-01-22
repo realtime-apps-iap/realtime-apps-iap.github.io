@@ -62,7 +62,7 @@ module.exports = {
                     title: "Competition",
                     items: [{
                         label: "Competition Information",
-                        to: "/docs/competition/info",
+                        to: "/competition",
                     }, ],
                 },
                 {
