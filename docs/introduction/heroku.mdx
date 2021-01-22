@@ -141,6 +141,19 @@ processor1: python project/worker/processor.py
 
 > The name of process types can be anything. Only the name `web` is special and reserved, as heroku needs to know to deal with web traffic.
 
+## Running Heroku locally
+
+One thing that would be helpful in iteration and testing if your application would run correctly on heroku (especially with multiple processes indicated), is to try to run it locally first.  
+To run it locally,
+
+```
+heroku local web
+```
+
+This serve the website on local host with the heroku development environment
+
+> Check that it runs well locally before you deploy it to heroku - saves time and effort
+
 ---
 
 ## Useful Heroku CLI commands
