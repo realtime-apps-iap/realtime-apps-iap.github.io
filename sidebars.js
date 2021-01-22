@@ -19,5 +19,4 @@ module.exports = {
         "Session Two": ["sessiontwo/slides"],
         // Others: ["others/styleguide"], // Not shown in sidebar. Just visit /resources/docs/guide to view this.
     },
-    competition: ["competition/info"], // This sidebar is not used anymore.
 };
