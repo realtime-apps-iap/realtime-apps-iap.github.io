@@ -1,0 +1,115 @@
+---
+title: Instructions - Exploring Browser-side APIs
+sidebar_label - Instructions: Exploring Browser-side APIs
+---
+
+Let's explore some browser-side APIs. To do that in a safe environment, create an empty directory, and then empty web page in that directory and call it `index.html`
+
+```html
+<html>
+    <body></body>
+</html>	
+```
+
+and serve the page locally (you can use whatever server you like, but we'll use `serve` here)
+
+navigate to the directory containing `index.html` and run
+
+```
+serve -p 8080
+```
+
+this serves the static web page on port 8080.
+
+Now you can crack open your developer tools and try running / modifying these code snippets!
+
+### Notifications (Desktop)
+
+```js
+Notification.requestPermission()
+.then(() => {
+    new Notification("This is a Notification!")
+})
+.catch((e) => {
+    console.log(e)
+});
+```
+
+### GeoLocation (Desktop / Mobile)
+
+```js
+navigator.geolocation.getCurrentPosition((g) => {
+    console.log(`Your current position is latitude: ${g.coords.latitude}, longitude ${g.coords.longitude}`)
+});
+```
+
+### Vibration (Mobile)
+
+You will need Chrome on both your Desktop and an Android Device for this to work.
+
+- First, [set up remote debugging on your Android device.](https://developers.google.com/web/tools/chrome-devtools/remote-debugging)
+- Then, open chrome on your Android device and go to `chrome://inspect/#devices` on your desktop
+- Click on the **Port Forwarding** button and enable port forwarding. Map port `8080` to `localhost:8080`
+- In the **Open tab with url** text box, enter a URL and then click **Open**. The page opens in a new tab on your Android device and click **Inspect** next to the URL you just opened.
+
+```js
+window.navigator.vibrate(200);
+```
+
+This should cause the device to vibrate for 200ms. If not, check the vibration settings!
+
+Try this snippet out!
+
+```js
+window.navigator.vibrate([100,100,100,100,100,100,300,100,300,100,300,100,100,100,100,100,100,100]);
+```
+
+Sound familiar? That's the morse code for [SOS](https://en.wikipedia.org/wiki/SOS)! i.e. the only notable pattern I could come up with.
+
+Note: Remember to set the site settings back to what they were before after you're done with the exercises!
+
+### Media Capture & Streams API (Desktop / Mobile)
+
+Now, insert a `<video>` element into `index.html` file with an id of `video` so it looks like this:
+
+```html
+<html>
+	<body>
+		<video id="video"></video>
+         <style>
+             #video {
+                 border: 1px solid black;
+                 max-width: 100vw;
+                 max-height: 100vh;
+             }
+         </style>
+	</body>
+</html>
+```
+
+Remember to reload your server afterwards!
+
+Now we can try this snippet out:
+
+```js
+navigator.mediaDevices.getUserMedia({audio: false, video:true})
+.then((stream) => {
+	const video = document.getElementById("video");
+	video.srcObject = stream;
+    video.play();
+});
+```
+
+### Screen Capture API (Desktop)
+
+This works very similarly to the Media Capture and Streams API. We can use the same setup for `index.html` as above, but with the following snippet
+
+```js
+navigator.mediaDevices.getDisplayMedia({audio: false, video:true})
+.then((stream) => {
+	const video = document.getElementById("video");
+	video.srcObject = stream;
+    video.play();
+});
+```
+

@@ -3,10 +3,33 @@ title: Intro
 sidebar_label: Intro
 ---
 
-What is this about.......
+## Objectives
 
-## Getting Started
+We want to build a location-sharing application, that allows users to create and join rooms where they can share their live locations. For this, we need the following behaviour:
 
-What to prep etc......
+when a user enters the application:
+-   user is able to enter their display nickname
+-   user is able to enter the ID of the room they want to join
+-   user is able to choose to either create a new room, or join an existing online
 
-etc etc
+when a user creates a room:
+-   user is added to the room
+-   user is given the details of the room (room ID, number of active users)
+
+when a user joins a room:
+-   user is added to the room
+-   user is given the details of the room (room ID, number of active users)
+-   all other users in the room receive the details of the newly arrived user (id for internal app use, display name, current location)
+
+when a user updates their location
+-   all other users in the room receive the details of the user with updates(id for internal app use, display name, current location)
+
+when a user leaves the room:
+-   all other users in the room receive the details of the leaving user (id for internal app use, display name, current location)
+
+when in a room, all users are able to see each others locations, displayed on a map. 
+
+
+For reference:
+
+The completed code can be found [here](https://github.com/realtime-apps-iap/location-sharing-app)
