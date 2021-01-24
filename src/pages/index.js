@@ -101,6 +101,7 @@ function Home() {
         <div
           style={{
             textAlign: "center",
+            marginBottom: "-10px",
           }}
         >
           <img
