@@ -5,6 +5,7 @@ import Link from "@docusaurus/Link";
 import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import styles from "./styles.module.css";
+import Poster from "../../static/img/poster.png";
 
 const features = [
   {
@@ -80,7 +81,12 @@ function Home() {
           </div>
         </div>
       </header>
-      <main>
+      <main
+        style={{
+          background:
+            "radial-gradient(92.55% 83.94% at 50% 100%, #578DF8 0%, #578DF9 17.19%, #315B9A 51.74%, #001E4A 100%)",
+        }}
+      >
         {/* {features && features.length > 0 && (
           <section className={styles.features}>
             <div className="container">
@@ -92,10 +98,14 @@ function Home() {
             </div>
           </section>
         )} */}
-        <div style={{ textAlign: "center" }}>
+        <div
+          style={{
+            textAlign: "center",
+          }}
+        >
           <img
-            style={{ maxWidth: "50vw" }}
-            src={"img/poster.png"}
+            style={{ width: "100vw", maxWidth: "1200px" }}
+            src={Poster}
             alt={"poster"}
           />
         </div>
