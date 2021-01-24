@@ -14,8 +14,11 @@ module.exports = {
         "Session One": ["sessionone/slides"],
         "Tutorial: Exploring Browser APIs": ["browserapi/intro", "browserapi/main"],
         "Tutorial: Location Sharing App": ["locationapp/intro"],
-        "Tutorial: React PWA": ["reactpwa/intro"],
-        "Tutorial: Deploying to Heroku": ["mushroomclassifier/intro"],
+        //"Tutorial: React PWA": ["reactpwa/intro"],
+        "Tutorial: Deploying to Heroku": [
+            "herokudeployment/react",
+            "herokudeployment/pythonapp",
+        ],
         "Session Two": ["sessiontwo/slides"],
         // Others: ["others/styleguide"], // Not shown in sidebar. Just visit /resources/docs/guide to view this.
     },

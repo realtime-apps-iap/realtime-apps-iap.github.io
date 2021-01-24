@@ -1,0 +1,81 @@
+---
+title: Deploying a React App
+sidebar_label: React App
+---
+
+In this simple tutorial, let's go through how we can deploy a React application (create-react-app) on Heroku
+
+> React.js is one of the most popular frontend library micro-frameworks which I believe many groups are using. So, let's go through how we can deploy this very easily!
+
+### Set up React App
+
+We can just start off with the template create-react-app
+
+```
+npx create-react-app sample-app
+cd sample-app
+```
+
+Let's initialise this as a git repository as we will need this later, as we will be using git to deploy to heroku
+
+```
+git init
+```
+
+### Adding Heroku
+
+1. Create Heroku application
+
+```
+heroku create
+```
+
+To check if heroku is added to your git repository (you should see heroku)
+
+```
+git remote -v
+```
+
+To check the heroku apps you currently have
+
+```
+heroku apps
+```
+
+2. Rename the created heroku application
+
+```
+heroku apps:rename <newname> --app <oldname>
+```
+
+> When you first create the heroku app, a random name will be given, you will have to rename it yourself
+
+OR if you already created a heroku application on the heroku website, you can link it directly
+
+```
+heroku git:remote -a <nameofherokuapp>
+```
+
+### Test Heroku App
+
+Test the heroku application locally before we push it to heroku remote
+
+```
+heroku local
+```
+
+Open your localhost at specified port. This will be how it will behave on heroku web.
+
+### Deploying code
+
+1. Push code to heroku
+
+```
+git push heroku main
+```
+
+> main or master branch
+
+2. Open Heroku website!
+
+Open the heroku website at < app name >.heroku.com!
