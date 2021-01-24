@@ -87,29 +87,6 @@ function Home() {
             "radial-gradient(92.55% 83.94% at 50% 100%, #578DF8 0%, #578DF9 17.19%, #315B9A 51.74%, #001E4A 100%)",
         }}
       >
-        {/* {features && features.length > 0 && (
-          <section className={styles.features}>
-            <div className="container">
-              <div className="row">
-                {features.map((props, idx) => (
-                  <Feature key={idx} {...props} />
-                ))}
-              </div>
-            </div>
-          </section>
-        )} */}
-        <div
-          style={{
-            textAlign: "center",
-            marginBottom: "-10px",
-          }}
-        >
-          <img
-            style={{ width: "100vw", maxWidth: "1200px" }}
-            src={Poster}
-            alt={"poster"}
-          />
-        </div>
       </main>
     </Layout>
   );

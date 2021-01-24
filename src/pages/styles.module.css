@@ -6,14 +6,28 @@
  */
 
 .heroBanner {
+  background-color: #578DF9;
+  background-image:
+    url("../../static/img/banner_left.png"),
+    url("../../static/img/banner_right.png");
+  background-position: 0% 100%, 100% 100%, center;
+  background-repeat: no-repeat;
+  background-size: contain, contain, cover;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
+
 @media screen and (max-width: 966px) {
   .heroBanner {
+    background-image:
+    url("../../static/img/banner_left.png"),
+    url("../../static/img/banner_right.png");
+    background-position: -10% 100%, 110% 100%;
+    background-repeat: no-repeat;
+    background-size: 30%, 30%, cover;
     padding: 2rem;
   }
 }
