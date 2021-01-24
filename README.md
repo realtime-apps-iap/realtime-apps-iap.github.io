@@ -1,6 +1,14 @@
-# Website
+# Realtime Web Apps IAP Official website
 
-This website is built using [Docusaurus 2](https://v2.docusaurus.io/), a modern static website generator.
+This website documents our content for:
+
+- learning materials
+- tutorials
+- session slides
+- competition information
+- projects submitted for competition
+
+---
 
 ## Installation
 
