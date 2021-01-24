@@ -28,7 +28,7 @@ module.exports = {
                     label: "Competition",
                     position: "right",
                 },
-                { to: "blog", label: "Blog", position: "right" },
+                // { to: "blog", label: "Blog", position: "right" },
                 {
                     href: "https://github.com/realtime-apps-iap",
                     label: "GitHub",
@@ -45,10 +45,6 @@ module.exports = {
                             to: "docs/",
                         },
                         {
-                            label: "Introduction",
-                            to: "docs/",
-                        },
-                        {
                             label: "Chat Platform",
                             to: "docs/chatapp/intro",
                         },
@@ -56,21 +52,39 @@ module.exports = {
                             label: "Videocall App",
                             to: "docs/videocallapp/intro",
                         },
+                        {
+                            label: "Exploring Browser APIs",
+                            to: "docs/browserapi/intro",
+                        },
+                        {
+                            label: "Heroku Deployment",
+                            to: "docs/herokudeployment/react",
+                        },
                     ],
                 },
                 {
                     title: "Competition",
                     items: [{
-                        label: "Competition Information",
-                        to: "/competition",
-                    }, ],
+                            label: "Competition Information",
+                            to: "/competition",
+                        },
+                        {
+                            label: "Project ideas",
+                            to: "/competition/projectideas",
+                        },
+                        {
+                            label: "Projects Submitted",
+                            to: "/competition/projects",
+                        },
+                    ],
                 },
                 {
                     title: "More",
-                    items: [{
-                            label: "Blog",
-                            to: "blog",
-                        },
+                    items: [
+                        // {
+                        //     label: "Blog",
+                        //     to: "blog",
+                        // },
                         {
                             label: "GitHub",
                             href: "https://github.com/realtime-apps-iap",
