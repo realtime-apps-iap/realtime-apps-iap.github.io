@@ -60,6 +60,10 @@ module.exports = {
                             label: "Heroku Deployment",
                             to: "docs/herokudeployment/react",
                         },
+                        {
+                            label: "Workshop Poster",
+                            to: "docs/others/poster",
+                        },
                     ],
                 },
                 {
