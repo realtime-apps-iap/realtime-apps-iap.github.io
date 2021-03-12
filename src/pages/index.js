@@ -62,7 +62,7 @@ function Home() {
     <Layout
       //title={`Hello from ${siteConfig.title}`}
       title={`Workshop Resources`}
-      description="Description will go into a meta tag in <head />"
+      description="Introduction to Realtime Web Applications Workshop & Lesson Material"
     >
       <header className={clsx("hero hero--primary", styles.heroBanner)}>
         <div className="container">
@@ -86,8 +86,7 @@ function Home() {
           background:
             "radial-gradient(92.55% 83.94% at 50% 100%, #578DF8 0%, #578DF9 17.19%, #315B9A 51.74%, #001E4A 100%)",
         }}
-      >
-      </main>
+      ></main>
     </Layout>
   );
 }
