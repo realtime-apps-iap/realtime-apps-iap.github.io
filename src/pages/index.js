@@ -6,6 +6,7 @@ import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useBaseUrl from "@docusaurus/useBaseUrl";
 import Icon from "@material-ui/core/Icon";
 import GitHubIcon from '@material-ui/icons/GitHub';
+import LinkedInIcon from '@material-ui/icons/LinkedIn'
 import styles from "./styles.module.css";
 
 
@@ -94,7 +95,7 @@ function Home() {
             {siteConfig.title}
           </h1>
           <p className="hero__subtitle">{siteConfig.tagline}</p>
-          <div className={styles.buttons}>
+          <div class="margin-bottom--sm">
             <Link
               className={clsx(
                 "button button--outline button--secondary button--lg",
@@ -105,10 +106,40 @@ function Home() {
               Start Learning!
             </Link>
           </div>
+          <div class="margin-bottom--sm">
+            <Link
+              className={clsx(
+                "button button--outline button--secondary button--lg",
+                styles.getStarted
+              )}
+              to="https://eventyay.com/e/fa96ae2c/session/6886"
+            >
+              Join us at FOSSASIA 2021!
+            </Link>
+          </div>
         </div>
       </header>
       <main>
         <div class="container">
+          <section>
+            <div class="row padding-vert--md">
+              <div class="col col--10 col--offset-1">
+                <h1 class="margin-bottom--sm">
+                  About
+              </h1>
+                <p>
+                  Introduction to Realtime Web Applications is a workshop aimed at introducing to participants the principles behind building highly interactive, real-time web applications.
+                  <br />
+                  <br />
+                  Participants will pick up the basics of how to build realtime web applications through demonstating the applications of WebSockets and WebRTC in building applications such as text and video chat rooms, as well as get inspired to build similar applications themselves.
+                  <br />
+                  <br />
+                  This workshop was initially run as an Independent Activities Period (IAP) workshop at the Singapore University of Technology and Design, but we're also hosting a second run at <a href="https://eventyay.com/e/fa96ae2c/session/6886" target="_blank">FOSSASIA Summit 2021</a>!
+                </p>
+              </div>
+            </div>
+          </section>
+
           <section>
             <div class="row padding-vert--md">
               <div class="col col--10 col--offset-1">
@@ -123,6 +154,80 @@ function Home() {
                     {projects.map((props, idx) => (
                       <Project key={idx} {...props} />
                     ))}
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section>
+            <div class="row padding-vert--md">
+              <div class="col col--10 col--offset-1">
+                <h1 class="margin-bottom--sm">
+                  Team
+              </h1>
+                <p>
+                  This workshop was brought to you by:
+                </p>
+                <div class="row">
+                  <div class="col margin-bottom--md">
+                    <div class="card item shadow--md">
+                      <div class="card__body">
+                        <div class="avatar avatar--vertical">
+                          <img
+                            class="avatar__photo avatar__photo--xl"
+                            src={useBaseUrl("img/lowen_photo.jpg")}
+                          />
+                          <div class="avatar__intro">
+                            <h4 class="avatar__name">Lowen (Low En)</h4>
+                            <small class="avatar__subtitle margin-bottom--md">
+                              Software Engineer | Passionate about Web Technologies
+                            </small>
+                            <div class="row">
+                              <div class="col">
+                                <a href="https://github.com/lowenhere" target="_blank" class="margin-right-md">
+                                  <GitHubIcon />
+                                </a>
+                                <a> </a>
+                                <a href="https://linkedin.com/in/low-en" target="_blank">
+                                  <LinkedInIcon />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col margin-bottom--md">
+                    <div class="card item shadow--md">
+                      <div class="card__body">
+                        <div class="avatar avatar--vertical">
+                          <img
+                            class="avatar__photo avatar__photo--xl"
+                            src={useBaseUrl("img/daryll_photo.jpg")}
+                          />
+                          <div class="avatar__intro">
+                            <h4 class="avatar__name">Daryll Wong</h4>
+                            <small class="avatar__subtitle margin-bottom--md">
+                              Software Engineer | Product Enthusiast
+                            </small>
+                            <div class="row">
+                              <div class="col">
+                                <a href="https://github.com/daryllman" target="_blank" class="margin-right-md">
+                                  <GitHubIcon />
+                                </a>
+                                <a> </a>
+                                <a href="https://linkedin.com/in/daryllwong/" target="_blank">
+                                  <LinkedInIcon />
+                                </a>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
                   </div>
                 </div>
               </div>
