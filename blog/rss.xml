@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
 <rss version="2.0">
     <channel>
-        <title>Realtime Apps Blog</title>
+        <title>Introduction to Realtime Web Applications Blog</title>
         <link>https://realtime-apps-iap.github.io/blog</link>
-        <description>Realtime Apps Blog</description>
+        <description>Introduction to Realtime Web Applications Blog</description>
         <lastBuildDate>Mon, 18 Jan 2021 00:00:00 GMT</lastBuildDate>
         <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
         <generator>https://github.com/jpmonette/feed</generator>
