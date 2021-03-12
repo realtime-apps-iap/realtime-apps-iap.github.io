@@ -4,48 +4,90 @@
  * CSS files with the .module.css suffix will be treated as CSS modules
  * and scoped locally.
  */
+ 
+ /* background: radial-gradient(92.55% 83.94% at 50% 100%, #578DF8 0%, #578DF9 17.19%, #315B9A 51.74%, #001E4A 100%); */
 
 .heroBanner {
   background-color: #578DF9;
   background-image:
     url("../../static/img/banner_left.png"),
-    url("../../static/img/banner_right.png");
-  background-position: 0% 100%, 100% 100%, center;
+    url("../../static/img/banner_right.png"),
+    radial-gradient(
+      circle at bottom, 
+      #578DF8 0%, 
+      #578DF9 10%, 
+      #315B9A 60%, 
+      #001E4A 100%);
+  background-position: 0% 100%, 100% 100%;
   background-repeat: no-repeat;
-  background-size: contain, contain, cover;
+  background-size: contain, contain;
   padding: 4rem 0;
   text-align: center;
   position: relative;
   overflow: hidden;
 }
 
+.heroContainer {
+  max-width: 60%;
+}
+
+html[data-theme="light"] .title {
+  text-shadow: 0 0 0.5rem black;
+}
+
+html[data-theme="dark"] .title {
+  text-shadow: 0 0 0.25rem white;
+}
+
+.projectsContainer {
+  display: grid;
+  justify-items: center;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+}
+
+.projectCard {
+  margin: 0 0.5rem;
+  margin-bottom: 1rem;
+  align-self: stretch;
+  position: relative;
+}
+
+.projectCardBadge{
+  z-index: 1000;
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  font-size: 0.75rem;
+}
+
+
 
 @media screen and (max-width: 966px) {
   .heroBanner {
     background-image:
     url("../../static/img/banner_left.png"),
-    url("../../static/img/banner_right.png");
+    url("../../static/img/banner_right.png")
+    radial-gradient(
+      circle at bottom, 
+      #578DF8 0%, 
+      #578DF9 50%, 
+      #315B9A 80%, 
+      #001E4A 100%);;
     background-position: -10% 100%, 110% 100%;
     background-repeat: no-repeat;
     background-size: 30%, 30%, cover;
     padding: 2rem;
   }
+
+  .heroContainer {
+    max-width: 95%;
+  }
+
+  
 }
 
-.buttons {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.features {
-  display: flex;
-  align-items: center;
-  padding: 2rem 0;
-  width: 100%;
-}
-
-.featureImage {
-  height: 200px;
-  width: 200px;
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 2rem
+  }
 }
