@@ -85,8 +85,7 @@ function Home() {
   const { siteConfig = {} } = context;
   return (
     <Layout
-      title={`Workshop Resources`}
-      description="Description will go into a meta tag in <head />"
+      description="Introduction to Realtime Web Applications is a workshop aimed at introducing to participants the principles behind building highly interactive, real-time web applications."
     >
       <header className={clsx("hero hero--primary text--center", styles.heroBanner)}>
 
