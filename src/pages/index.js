@@ -167,24 +167,21 @@ function Home() {
                   themselves.
                   <br />
                   <br />
-                  In this workshop, participants learnt how to develop various
-                  realtime applications like group chat applications, location
-                  sharing applications and video call applications. In addition,
-                  they also learnt to utilise Docker and deploying the
-                  applications on Heroku, as well as other considerations on
-                  scalability and reliability.
+                  In addition, we also go through the basics of utilizing Docker
+                  and deploying the applications on Heroku, as well as other
+                  considerations on scalability and reliability.
                   <br />
                   <br />
-                  To encourage participants to produce cool realtime
+                  This workshop was initially run as an Independent Activities
+                  Period (IAP) workshop at the Singapore University of
+                  Technology and Design. To encourage participants to produce cool realtime
                   applications, we organised a hackathon towards the end of the
                   workshop, and we saw many interesting projects! The winning
                   submissions are included in the project list below. Feel free
                   to try them out!
                   <br />
                   <br />
-                  This workshop was initially run as an Independent Activities
-                  Period (IAP) workshop at the Singapore University of
-                  Technology and Design, but we're also hosting a second run at{" "}
+                  We're looking forward to hosting a second run of the workshop at{" "}
                   <a
                     href="https://eventyay.com/e/fa96ae2c/session/6886"
                     target="_blank"

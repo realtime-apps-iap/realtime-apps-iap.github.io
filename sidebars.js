@@ -11,7 +11,6 @@ module.exports = {
         ],
         "Tutorial: Group Chat App": ["chatapp/intro"],
         "Tutorial: Video Call App": ["videocallapp/intro"],
-        "Session One": ["sessionone/slides"],
         "Tutorial: Exploring Browser APIs": ["browserapi/intro", "browserapi/main"],
         "Tutorial: Location Sharing App": ["locationapp/intro"],
         //"Tutorial: React PWA": ["reactpwa/intro"],
@@ -19,7 +18,11 @@ module.exports = {
             "herokudeployment/react",
             "herokudeployment/pythonapp",
         ],
-        "Session Two": ["sessiontwo/slides"],
+        "Slides": [
+            "slides/fossasia",
+            "slides/iapsession1",
+            "slides/iapsession2",
+        ]
         // Others: ["others/styleguide"], // Not shown in sidebar. Just visit /resources/docs/guide to view this.
     },
 };
